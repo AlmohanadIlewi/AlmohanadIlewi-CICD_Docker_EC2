@@ -1,0 +1,23 @@
+{
+  "name": "cicd_docker_ec2",
+  "version": "1.0.0",
+  "description": "- mkdir CICD_Docker_EC2",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlmohanadIlewi/CICD_Docker_EC2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlmohanadIlewi/CICD_Docker_EC2/issues"
+  },
+  "homepage": "https://github.com/AlmohanadIlewi/CICD_Docker_EC2#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
