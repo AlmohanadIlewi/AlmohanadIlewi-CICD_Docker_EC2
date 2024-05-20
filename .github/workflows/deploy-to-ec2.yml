@@ -1,17 +1,17 @@
-name: CI/CD & Nodejs App 
+name: CI/CD & Nodejs App
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code 
+    - name: Checkout Code
       uses: actions/checkout@v3
 
     - name: Set up Docker Buildx
@@ -22,12 +22,10 @@ jobs:
 
   login:
     runs-on: ubuntu-latest
-    needs: build  # Dieser Job wartet, bis der "build" Job abgeschlossen ist.
+    needs: build
 
     steps:
-    - name: Check Docker Username Secret
-      run: echo ${{ secrets.DOCKER_USERNAME }}
-      
+
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
       with:
@@ -36,7 +34,7 @@ jobs:
 
   push:
     runs-on: ubuntu-latest
-    needs: [build, login]  # Dieser Job wartet, bis die "build" und "login" Jobs abgeschlossen sind.
+    needs: [build, login]
 
     steps:
     - name: Checkout Code
@@ -44,8 +42,5 @@ jobs:
 
     - name: Tag and Push Image to Docker Hub
       run: |
-        docker images  # Listet alle verfügbaren Images auf, um sicherzustellen, dass das Image existiert
         docker tag cicd-docker-nodejsapp ${{ secrets.DOCKER_USERNAME }}/cicd-docker-nodejsapp:latest
         docker push ${{ secrets.DOCKER_USERNAME }}/cicd-docker-nodejsapp:latest
-
-        
