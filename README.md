@@ -41,8 +41,8 @@
 
  - docker tag image your-name of Docker Hub/YOUR NEW REPOSITORY:latest
 
- - docker tag cicd-nodejsapp mohanadilewi/cicd-docker-nodejs:latest
- - docker push mohanadilewi/cicd-docker-nodejsapp:latest
+ - docker tag cicd-nodejsapp mohanadilewi/docker-cicd-nodejsapp:latest
+ - docker push mohanadilewi/docker-cicd-nodejsapp:latest
 
  # test 
  sudo docker exec -it cicd-nodejs-container bash

@@ -2,9 +2,9 @@ name: CI/CD & Nodejs App
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -38,6 +38,5 @@ jobs:
     steps:
     - name: Tag and Push Image to Docker Hub
       run: |
-        docker images  # Listet alle verfügbaren Images auf, um sicherzustellen, dass das Image existiert
-        docker tag cicd-nodejsapp  ${{ secrets.DOCKER_USERNAME }}/cicd-docker-nodejsapp:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/cicd-docker-nodejsapp:latest
+        docker tag cicd-nodejsapp ${{ secrets.DOCKER_USERNAME }}/docker-cicd-nodejsapp:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/docker-cicd-nodejsapp:latest
