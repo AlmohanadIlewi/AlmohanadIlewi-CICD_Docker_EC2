@@ -25,10 +25,12 @@
  ## Docker 
  - touch Dockerfile
  * Dockerfile:
- - docker build -t cicd-nodjs .
+ - docker build -t cicd-nodejsapp .
  - docker ps
- - docker iamge ls
- - docker run --name cicd-nodejs-container -d -p 3002:3000  cicd-nodejs => Erstellung Container =>
+ - docker image ls
+ - docker run --name cicd-nodejsapp-container -d -p 3002:3000  cicd-nodejsapp                => Erstellung Container =>
+
+ Test
    localhost:3002
 
  # DockerHub
@@ -39,8 +41,8 @@
 
  - docker tag image your-name of Docker Hub/YOUR NEW REPOSITORY:latest
 
- - docker tag 8b1a5804c042 mohanadilewi/cicd-docker-nodejs:latest
- - docker push mohanadilewi/cicd-docker-nodejs:latest
+ - docker tag cicd-nodejsapp mohanadilewi/cicd-docker-nodejs:latest
+ - docker push mohanadilewi/cicd-docker-nodejsapp:latest
 
  # test 
  sudo docker exec -it cicd-nodejs-container bash
@@ -80,7 +82,7 @@
  - touch Dockerfile
  * Dockerfile:
   Image Erstellung mit Name cicd-nodejsapp
- - docker build -t cicd-nodjsapp .
+ - docker build -t cicd-nodejsapp .
  - docker ps
  - docker iamge ls
  - docker run --name cicd-nodejsapp-cont -d -p 3002:3000  cicd-nodejsapp                => Erstellung Container =>
@@ -106,6 +108,6 @@
 - sudo su =====> auf root wechseln
 - docker ?
 - snap install docker ===> Install Docker auf Ubuntu machine
-- docker run --platform linux/amd64 -d -p 3002:3000 --name cicd-nodejs-cont mohanadilewi/cicd-docker-nodejsapp:latest
+- docker run --name cicd-nodejsapp-cont -d -p 3002:3000  mohanadilewi/cicd-docker-nodejsapp:latest
 
 
