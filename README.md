@@ -98,6 +98,11 @@
 
  - docker tag  cicd-nodejsapp mohanadilewi/cicd-docker-nodejsapp:latest
  - docker push  mohanadilewi/cicd-docker-nodejsapp:latest
+ 
+  - neu Container und neue Image:
+  docker run --name cicd-nodejsapp-gitaction -d -p 3001:3000 mohanadilewi/docker-cicd-nodejsapp:latest
+
+
 
  # test 
  sudo docker exec -it cicd-nodejs-cont           =>  bash
@@ -108,6 +113,6 @@
 - sudo su =====> auf root wechseln
 - docker ?
 - snap install docker ===> Install Docker auf Ubuntu machine
-- docker run --name cicd-nodejsapp-cont -d -p 3002:3000  mohanadilewi/cicd-docker-nodejsapp:latest
+- docker run --name cicd-nodejsapp-EC2 -d -p 3003:3000  mohanadilewi/docker-cicd-nodejsapp:latest
 
 
